@@ -9,14 +9,14 @@ if [ ! -d "venv" ]; then
 fi
 
 #Activar el entorno viertual correctamente
-if [ -f "venv/bin/activate" ]; then 
+#if [ -f "venv/bin/activate" ]; then 
     source venv/bin/activate
 #elif [-f "venv/Scripts/activate"]; then #Para windows
  #   source "venv/Scripts/activate"
-else
-    echo "Error no se pudo activar el entorno virtual"
-    exit 1
-fi
+#else
+ #   echo "Error no se pudo activar el entorno virtual"
+ #   exit 1
+#fi
 
 #Verificar si pip esta instalado correctamente
 echo "Instalando las dependencias"
