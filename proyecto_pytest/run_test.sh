@@ -27,7 +27,7 @@ pip3 freeze > requirements.txt
 pip3 install -r requirements.txt
 
 #Crear la carpeta donde se van a guardar los reportes
-mkdir -p reports
+mkdir -p ../reports
 
 echo "Ejecutando las pruebas con pytest"
 pytest test/ --junitxml=reports/test-results.xml --html=reports/test-results.html --self-contained-html
