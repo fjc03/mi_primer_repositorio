@@ -2,15 +2,25 @@
 
 
 echo "Activando el entorno virtual"
-if [!"-d venv "]; then
+if [ ! -d "venv "]; then
+    echo "Entorno virtual no encontrado, creandolo..."
     python3 -m venv venv
 fi
 
-source venv/bin/activate
+#Activar el entorno viertual correctamente
+if [ -f "venv/bin/activate" ]; then 
+    source venv/bin/activate
+elif [-f "venv/Scripts/activate"]; then #Para windows
+    source "venv/Scripts/activate"
+else
+    echo "Error no se pudo activar el entorno virtual"
+    exit 1
+fi
 
+#Verificar si pip esta instalado correctamente
 echo "Instalando las dependencias"
-pip install --upgrade pip
-pip install -r requirements.txt
+pip install --upgrade pip --break-system-packages
+pip install -r requirements.txt --break-system-packages
 
 echo "Ejecutando las pruebas con pytest"
 pytest test/ --junitxml=reports/test-results.xml --html=reports/test-results.html --self-contained-html
