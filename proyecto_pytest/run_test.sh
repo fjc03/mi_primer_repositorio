@@ -1,8 +1,8 @@
 #!/bin/bash
 
 
-echo "Activando el entorno virtual"
-if [ ! -d "venv"]; then
+echo "Iniciando ejecución de pruebas en jenkins"
+if [ ! -d "venv" ]; then
     echo "Entorno virtual no encontrado, creandolo..."
     python3 -m venv venv
 fi
