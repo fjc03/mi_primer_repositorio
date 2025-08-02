@@ -26,6 +26,9 @@ pip install -r requirements.txt --break-system-packages
 pip3 freeze > requirements.txt
 pip3 install -r requirements.txt
 
+pip install pytest
+pip install pytest-html
+
 #Crear la carpeta donde se van a guardar los reportes
 pwd
 mkdir -p reports
