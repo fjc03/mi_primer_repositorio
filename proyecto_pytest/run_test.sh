@@ -30,6 +30,6 @@ pip3 install -r requirements.txt
 mkdir -p reports
 
 echo "Ejecutando las pruebas con pytest"
-pytest test/ --junitxml=reports/test-results.xml --html=reports/test-results.html --self-contained-html
+python3 -m pytest test/ --junitxml=reports/test-results.xml --html=reports/test-results.html --self-contained-html
 
 echo "Pruebas finalizadas resultados en reports"
