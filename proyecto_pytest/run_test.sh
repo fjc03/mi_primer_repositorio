@@ -22,6 +22,9 @@ fi
 echo "Instalando las dependencias"
 pip install --upgrade pip --break-system-packages
 pip install -r requirements.txt --break-system-packages
+#Para mac
+pip3 freeze > requirements.txt
+pip3 install -r requirements.txt
 
 echo "Ejecutando las pruebas con pytest"
 pytest test/ --junitxml=reports/test-results.xml --html=reports/test-results.html --self-contained-html
